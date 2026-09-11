@@ -7,7 +7,7 @@ st.caption("Ask a question. I'll guide you with hints — not answers.")
 
 client = OpenAI(
     api_key=st.secrets["DEEPSEEK_API_KEY"],
-    base_url="https://api.deepseek.com"
+    base_url="https://aigw.dlut.edu.cn/v1"
 )
 
 SYSTEM_PROMPT = """You are an AI teaching assistant for a Linear Algebra and Analytic Geometry course in an international class. All interaction must be in English.
@@ -45,7 +45,7 @@ if prompt := st.chat_input("Type your question here..."):
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
             r = client.chat.completions.create(
-                model="deepseek-chat",
+                model="DeepSeek-V4-Flash-0731-W8A8",
                 messages=st.session_state.messages,
                 temperature=1.0,
                 top_p=1.0
