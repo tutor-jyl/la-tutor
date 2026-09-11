@@ -45,7 +45,7 @@ if prompt := st.chat_input("Type your question here..."):
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
             r = client.chat.completions.create(
-                model="deepseek-flash",
+                model="deepseek-chat",
                 messages=st.session_state.messages,
                 temperature=1.0,
                 top_p=1.0
